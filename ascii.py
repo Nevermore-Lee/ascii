@@ -16,7 +16,8 @@ WIDTH = args.width
 HEIGHT = args.height
 OUTPUT = args.output
 
-acii_char = list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
+# acii_char = list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
+acii_char = list("qwertyuiopasdfghjklzxcvbnm")
 
 #将256个灰度值映射到70个字符上
 def get_char(r,g,b,alpha=256):
@@ -33,7 +34,7 @@ if __name__ =="__main__":
     txt = ""
     for i in range(HEIGHT):
         for j in range(WIDTH):
-            txt += get_char(*im.getpixel((j,i)))
+            txt += get_char(*im.getpixel((j,i)))#im.getpixel((j,i))返回一个元组，*是一个运算符，将元组拆封，返回元组所有元素
         txt += '\n'
     print(txt)
     #字符输出到文件
